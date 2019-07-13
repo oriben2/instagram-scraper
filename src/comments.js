@@ -40,7 +40,7 @@ const loadMore = async (pageData, page, retry = 0) => {
     let clicked;
     for (let i = 0; i < 10; i++) {
         clicked = await Promise.all([
-            page.click('article ul li button'),
+            page.click('article ul li button span[class*=Circle]'),
             page.waitForRequest(
                 (request) => {
                     const requestUrl = request.url();
